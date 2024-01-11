@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh" id="htmlRoot">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cola 管理后台</title>
+</head>
+<body>
+<div id="app">
+    <!--在 Vue 还没有渲染出页面的时候,使用最基本的 html 和 css 来展示页面 loading,防止白屏-->
+    <style>
+        html {
+            /* 与ant-design-vue/dist/reset.css设置相同，避免标题行高度更改 */
+            /* 直接拷贝的 vben admin 的注释 XD */
+            line-height: 1.15;
+            font-family: Inter,
+            -apple-system,
+            BlinkMacSystemFont,
+            'Segoe UI',
+            Roboto,
+            Oxygen,
+            Ubuntu,
+            Cantarell,
+            'Fira Sans',
+            'Droid Sans',
+            'Helvetica Neue',
+            sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .app-loading {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #F5F5F5;
+        }
+
+        .logo {
+            width: 128px;
+        }
+
+        .progress-wrap {
+            height: 5px;
+            width: 234px;
+            border-radius: 999px;
+            overflow: hidden;
+            /* 十拍 E6 完不成,只能三拍 */
+            background: #E6E6E6;
+
+        }
+
+        .progress {
+            height: 100%;
+            width: 50%;
+            border-radius: 999px;
+            background-color: #000;
+            animation: loading-animation 1s infinite;
+        }
+
+        @keyframes loading-animation {
+            0% {
+                transform: translateX(-100%);
+            }
+            50% {
+                transform: translateX(-80%);
+            }
+            80% {
+                transform: translateX(180%);
+            }
+            100% {
+                transform: translateX(200%);
+            }
+        }
+    </style>
+    <div class="app-loading">
+        <img src="/logo.png" alt="logo" class="logo"/>
+        <h1>Cola Admin</h1>
+        <div class="progress-wrap">
+            <div class="progress"></div>
+        </div>
+    </div>
+</div>
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>
