@@ -1,68 +1,34 @@
-# vben-admin
+# Cola-Admin
 
-This template should help get you started developing with Vue 3 in Vite.
+学习 vben-admin 的设计
 
-## Recommended IDE Setup
+项目搭建是真的难受啊😣,好复杂的感觉  
+要成六边形战士了 QAQ
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+### 项目使用的包:
+从 vben-admin 的 package.json 中可以看到,他安装了非常多的依赖,就表示这是一个非常大的项目了... QAQ
 
-## Type Support for `.vue` Imports in TS
+#### 规范 git 提交
+首先是关于 git 提交,在 vben 的文档中可以看到,他们题到了 [CommitLint](https://doc.vvbin.cn/dep/lint.html#commitlint) 这个工具  
+这个工具是用来保证项目的代码提交规范的 (在我写代码的前期可能就是没有啥规范,ps: 我的规矩就是规矩 XD)  
+接着查看 `package.json` 中,可以看到还配置了一个 config
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-pnpm install
+```json
+{
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  }
+}
 ```
 
-### Compile and Hot-Reload for Development
+这个配置让 `commitizen` 使用 `cz-git` 这个适配器,看官网的意思就是说它是工程性更强,更轻量的一个适配器  
+因为我之前并没有用过 `commitizen` 这个工具,所以是很懵逼的,看了下它的仓库的 README.md,也安装用了下,大概给我的感觉就是:  
+> 一个很方便的 cli 工具,可以使用很简单的命令,比如 `cz` 来使用它,然后但我添加/修改了一个文件后我可以很方便的输入 `cz` 命令,然后它就会出现一系列的提示
+> 因为有了它的文字提示,我就可以很方便的选择我这次的 commit 属于什么
 
-```sh
-pnpm dev
-```
+### 增加了一些和 vben 不同的东西
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-pnpm test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-pnpm test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-pnpm build
-pnpm test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
+比如 cypress  
+> 这是一个端到端测试工具,这个是用 vite 创建项目时选择了,然后想了想要不也加进来,顺带学习下 (不过估计要鸽)
