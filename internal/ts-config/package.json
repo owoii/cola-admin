@@ -1,12 +1,17 @@
 {
-  "name": "ts-config",
+  "name": "@cola/ts-config",
   "version": "1.0.0",
-  "description": "",
+  "private": true,
+  "description": "配置文件",
+  "license": "MIT",
+  "author": "owocc",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "dependencies": {
+    "@types/node": "^18.19.3",
+    "vite": "^5.0.10"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "files": [
+    "base.json",
+    "vue-app.json"
+  ]
 }

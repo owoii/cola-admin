@@ -1,0 +1,6 @@
+{
+  "$schema": "../schema/person.json",
+  "name": "坤子",
+  "age": 2.5,
+  "sex": "篮球"
+}

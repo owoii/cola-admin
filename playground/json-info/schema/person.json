@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "这个 B的名字"
+    },
+    "age": {
+      "type": "number",
+      "description": "这个 B 的年纪"
+    },
+    "sex": {
+      "type": "string",
+      "description": "这个 B 的性别"
+    }
+  }
+}
