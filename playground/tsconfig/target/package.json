@@ -1,0 +1,14 @@
+{
+  "name": "target",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:es5": "tsc -p es5",
+    "build:es6": "tsc -p es6",
+    "build:esnext": "tsc -p esnext"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
